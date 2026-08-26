@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgenticLoop — Evidence Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="brand">AgenticLoop</p>
+      <h1>Evidence before narrative.</h1>
+      <p class="lede">A control-plane console for claim admission, metric provenance, and protocol comparison — wired to this repo’s durable research artifacts.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="#gate">Open claim gate</a>
+        <a class="cta ghost" href="#provenance">Inspect provenance</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 640 420" class="spine-art">
+        <defs>
+          <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M24 0H0V24" fill="none" stroke="currentColor" stroke-opacity="0.12" />
+          </pattern>
+        </defs>
+        <rect width="640" height="420" fill="url(#grid)" />
+        <path class="pipe" d="M40 210 H160" />
+        <path class="pipe" d="M200 210 H320" />
+        <path class="pipe" d="M360 210 H480" />
+        <path class="pipe" d="M520 210 H600" />
+        <rect class="node" x="160" y="178" width="40" height="64" rx="4" />
+        <rect class="node gate" x="320" y="154" width="40" height="112" rx="4" />
+        <rect class="node" x="480" y="178" width="40" height="64" rx="4" />
+        <text x="180" y="270" text-anchor="middle">RQ</text>
+        <text x="340" y="290" text-anchor="middle">GATE</text>
+        <text x="500" y="270" text-anchor="middle">PAPER</text>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section id="spine" class="section">
+      <div class="section-head">
+        <h2>Research spine</h2>
+        <p>Live epoch status from <code>docs/research/CURRENT</code>.</p>
+      </div>
+      <div id="spine-status" class="status-line"></div>
+      <ol id="pipeline" class="pipeline"></ol>
+      <div id="falsification" class="falsification"></div>
+    </section>
+
+    <section id="gate" class="section split">
+      <div class="section-head">
+        <h2>Claim admission gate</h2>
+        <p>Draft a claim. The gate holds or admits it based on evidence-trace heuristics — mock language is rejected.</p>
+      </div>
+      <form id="admit-form" class="admit">
+        <label for="claim">Draft claim</label>
+        <textarea id="claim" rows="5" placeholder="Example: Full protocol unsupported claim rate is 6.87% per runs/V6_RQ01_T05_metrics.json (claim-weighted)."></textarea>
+        <div class="toggles">
+          <label><input type="checkbox" id="require-path" /> Require artifact path</label>
+          <label><input type="checkbox" id="allow-mock" /> Allow mock language</label>
+        </div>
+        <button type="submit">Run admission</button>
+      </form>
+      <div id="admit-result" class="admit-result" hidden></div>
+    </section>
+
+    <section id="provenance" class="section">
+      <div class="section-head">
+        <h2>Metric provenance</h2>
+        <p>Same question, different artifacts. Pick a source before quoting a number.</p>
+      </div>
+      <div id="source-map" class="source-map"></div>
+      <div id="source-detail" class="source-detail" hidden></div>
+    </section>
+
+    <section id="compare" class="section">
+      <div class="section-head">
+        <h2>Protocol comparator</h2>
+        <p>Claim-weighted unsupported rates from T05 (canonical). Ablation deltas stay in their own lane.</p>
+      </div>
+      <div id="compare-bars" class="compare-bars"></div>
+      <div id="ablation-note" class="ablation-note"></div>
+    </section>
+
+    <section id="research-points" class="section">
+      <div class="section-head">
+        <h2>Extended research points</h2>
+        <p>Derived analyses from durable V6 artifacts — claim volume, gate redundancy, classifier drift, task heterogeneity.</p>
+      </div>
+      <div id="rp-stats" class="rp-stats"></div>
+      <ol id="rp-list" class="rp-list"></ol>
+    </section>
+
+    <section id="core-directions" class="section">
+      <div class="section-head">
+        <h2>Core research directions</h2>
+        <p>Error propagation, token/cost efficiency, and semantic stopping — measured on durable claim sequences (T10).</p>
+      </div>
+      <div id="rd-stats" class="rp-stats"></div>
+      <ol id="rd-list" class="rp-list"></ol>
+    </section>
+
+    <section id="strengthened-claims" class="section">
+      <div class="section-head">
+        <h2>Strengthened claims</h2>
+        <p>Falsifiable SC1–SC8 ledger: cosmetic traces, aggregation robustness, pairwise nulls, task harm, seed stability.</p>
+      </div>
+      <div id="sc-stats" class="rp-stats"></div>
+      <ol id="sc-list" class="rp-list"></ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>AgenticLoop Evidence Console · local-only · reads repo artifacts · does not invent results</p>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
