@@ -10,6 +10,12 @@ This repository contains the public research artifact for the AgenticLoop techni
 - `src/agenticloop/`: claim admission, metric provenance, and research-spine loaders.
 - `ui/`: Evidence Console — local UI for gate admission, provenance, and protocol comparison.
 
+
+High Level system architectural view of this AgenticLoop engineering project.
+
+<img width="6706" height="4771" alt="diagram (13)" src="https://github.com/user-attachments/assets/48bad189-f382-47dd-9e76-e8ff2938f35a" />
+
+
 The public artifact is venue-neutral. It preserves the research process and reproducibility materials without encoding a specific submission venue or outcome.
 
 ## Evidence Console
