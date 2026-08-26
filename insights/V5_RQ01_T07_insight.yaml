@@ -1,0 +1,105 @@
+---
+name: v5-rq01-evidence-gate-claim-reliability
+insight_id: V5_RQ01_T07_001
+description: AgenticLoop full protocol shows a directional reduction in unsupported claim rate and improvement in trace completeness on a 6-task synthetic suite, but the effect is not statistically significant due to zero seed variance and under-powered tests.
+metadata:
+  type: project
+---
+
+template_family: agentic_loop
+template_version: epoch_v1
+schema_version: 1
+generated_by: experiments/v5/scripts/generate_insight.py
+epoch: V5
+rq_id: RQ01
+task_id: T07
+
+question: "AgenticLoop 的显式 evidence gate 能否在受控研究任务中降低 AI agent 产生 unsupported claim 的比例，并提高 claim-to-evidence trace 完整性？"
+claim: "在 6 个受控合成研究任务上，AgenticLoop full protocol 相比 B01 ad-hoc agent 将 unsupported claim rate 从 0.241 降至 0.125（绝对降幅 0.116，相对降幅 48.2%），并将 trace completeness 从 0.759 提升至 0.875。然而，Friedman 检验（n=6 任务块）未达显著性（unsupported rate p=0.497；trace completeness p=0.273），且 3 个种子间零方差严重限制了统计功效。因此，该趋势是方向性的，而非结论性的。"
+status: supported_with_caveats
+
+layer: L2
+evidence_type: controlled_run_artifact
+evidence_source:
+  - runs/V5_RQ01_T05_metrics.json
+  - runs/V5_RQ01_T05_audit_labels.json
+  - runs/V5_RQ01_T06_statistical_report.md
+  - runs/V5_RQ01_T02_adhoc_results/
+  - runs/V5_RQ01_T03_linear_results/
+  - runs/V5_RQ01_T04_full_results/
+
+scorecard:
+  groundedness: 5
+  directness: 4
+  non_toy_depth: 3
+  assumption_challenge: 4
+  mechanism_clarity: 3
+  falsifiability: 5
+  evidence_ladder_strength: 3
+  negative_result_value: 5
+  statistical_rigor: 2
+  reproducibility: 4
+  total_score: 38
+  verdict: support_with_caveat
+  rationale: "L2 mechanistic insight: evidence gate and trace constraints produce a directional improvement in claim reliability metrics, but the synthetic 6-task suite, zero seed variance, and under-powered tests prevent a strong causal claim. The primary value is infrastructure validation. Mock leakage persisted across all conditions, indicating the gate does not block all failure modes."
+
+evidence:
+  - artifact: runs/V5_RQ01_T05_metrics.json
+    description: "Condition-level aggregates: B01 unsupported_rate=0.2414, B02=0.1739, full=0.1250; trace_completeness B01=0.7586, B02=0.8261, full=0.8750."
+  - artifact: runs/V5_RQ01_T06_statistical_report.md
+    description: "Friedman test n.s. for all primary metrics (p > 0.27). Wilcoxon post-hoc all corrected p = 1.0000. Cohen kappa ≈ 0.0223 between audit and oracle-derived second rater."
+  - artifact: runs/V5_RQ01_T05_audit_labels.json
+    description: "Per-run per-claim deterministic audit labels. RTS03 B02 shows 3 incomplete executions (0 claims). RTS02 shows mock_leakage in 3 runs per condition."
+  - artifact: runs/V5_RQ01_T02_adhoc_results/
+    description: "18 B01 ad-hoc runs with raw transcripts, claims, and oracle audits."
+  - artifact: runs/V5_RQ01_T03_linear_results/
+    description: "18 B02 linear pipeline runs with raw transcripts, claims, and oracle audits."
+  - artifact: runs/V5_RQ01_T04_full_results/
+    description: "18 Full AgenticLoop runs with raw transcripts, claims, evidence traces, and oracle audits."
+
+supporting_metrics:
+  - metric: "unsupported_claim_rate_B01"
+    value: 0.2414
+  - metric: "unsupported_claim_rate_B02"
+    value: 0.1739
+  - metric: "unsupported_claim_rate_full"
+    value: 0.1250
+  - metric: "trace_completeness_B01"
+    value: 0.7586
+  - metric: "trace_completeness_B02"
+    value: 0.8261
+  - metric: "trace_completeness_full"
+    value: 0.8750
+  - metric: "absolute_reduction_unsupported_rate_B01_to_full"
+    value: 0.1164
+  - metric: "absolute_improvement_trace_completeness_B01_to_full"
+    value: 0.1164
+  - metric: "friedman_p_unsupported_rate"
+    value: 0.4966
+  - metric: "friedman_p_trace_completeness"
+    value: 0.2725
+  - metric: "cohens_kappa_audit_vs_oracle"
+    value: 0.0223
+  - metric: "mock_leakage_runs_per_condition"
+    value: 3
+  - metric: "incomplete_execution_runs_B02_RTS03"
+    value: 3
+
+score: 38/50
+
+detector_scan:
+  label_chaser: false
+  leaderboard_lizard: false
+  architecture_lego: false
+  vague_promiser: false
+  single_point_claim: false
+  toy_rq: false
+
+mve_status: completed
+mve_description: "6-task synthetic suite executed across 3 conditions × 3 seeds; deterministic audit and statistical tests produced traceable artifacts."
+
+falsification_condition: "若 full protocol 的 unsupported claim rate 相对 B01 未降低至少 40%，或 trace completeness < 0.90，或人工审计不支持 deterministic audit 标签，则该 RQ 假设被反驳或降级。"
+reproducibility:
+  command: "python experiments/v5/scripts/generate_insight.py --rq RQ01"
+  environment: Python 3.10+
+  seed: null

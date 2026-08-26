@@ -1,0 +1,116 @@
+---
+name: v5-rq02-ablation-cost-benefit
+insight_id: V5_RQ02_T05_001
+description: Ablation of evidence gate and audit phase in AgenticLoop full protocol shows directional cost-quality trade-offs on a 6-task synthetic suite. Gate removal degrades quality without cost savings; audit removal saves cost but degrades quality and loses overgeneralization detection. No statistical significance is claimed.
+metadata:
+  type: project
+---
+
+template_family: agentic_loop
+template_version: epoch_v1
+schema_version: 1
+generated_by: experiments/v5/scripts/generate_insight.py
+epoch: V5
+rq_id: RQ02
+task_id: T05
+
+question: "在 AgenticLoop full protocol 中，移除 evidence gate（nogate）或移除 audit phase（noaudit）会如何影响 unsupported claim rate、trace completeness 和运行成本？"
+claim: "在 6 个受控合成研究任务上，移除 evidence gate 使 unsupported claim rate 从 0.125 升至 0.310（+0.185），trace completeness 从 0.875 降至 0.690（−0.185），且未节省 wall time 或 tokens。移除 audit phase 使 unsupported claim rate 升至 0.211（+0.086），trace completeness 降至 0.756（−0.119），但 wall time 减少 55.6%、tokens 减少 37.3%。两种 ablation 均 degrade 质量；nogate 无成本收益，noaudit 有显著成本收益但伴随质量损失和 overgeneralization 检测失效。所有结论均为描述性，未声称统计显著性。"
+status: supported_with_caveats
+
+layer: L2
+evidence_type: controlled_run_artifact
+evidence_source:
+  - runs/V5_RQ02_T03_ablation_delta.json
+  - runs/V5_RQ02_T03_cost_breakdown.csv
+  - runs/V5_RQ02_T04_statistical_report.md
+  - runs/V5_RQ02_T01_nogate_results/
+  - runs/V5_RQ02_T02_noaudit_results/
+  - runs/V5_RQ01_T04_full_results/
+  - runs/V5_RQ01_T05_metrics.json
+
+scorecard:
+  groundedness: 5
+  directness: 4
+  non_toy_depth: 3
+  assumption_challenge: 4
+  mechanism_clarity: 4
+  falsifiability: 5
+  evidence_ladder_strength: 3
+  negative_result_value: 5
+  statistical_rigor: 2
+  reproducibility: 4
+  total_score: 39
+  verdict: support_with_caveat
+  rationale: "L2 mechanistic insight: evidence gate and audit phase each contribute directional quality benefits in a synthetic 6-task suite. Gate removal is unambiguously harmful on all measured dimensions. Audit removal produces a cost-quality trade-off that may be acceptable depending on operational constraints. Caveats include seed non-independence, deterministic audit heuristics, no human adjudication, and under-powered block-level sample (n=6)."
+
+evidence:
+  - artifact: runs/V5_RQ02_T03_ablation_delta.json
+    description: "Condition-level aggregates: full unsupported_rate=0.1250, nogate=0.3103, noaudit=0.2111; trace_completeness full=0.8750, nogate=0.6897, noaudit=0.7556."
+  - artifact: runs/V5_RQ02_T03_cost_breakdown.csv
+    description: "Cost data: full avg wall_time=8.47s, nogate=9.28s, noaudit=3.76s."
+  - artifact: runs/V5_RQ02_T04_statistical_report.md
+    description: "Descriptive and nonparametric summaries. Formal inferential tests abstained due to seed non-independence and n=6 blocks. Cost-normalized quality metrics and directional counts reported."
+  - artifact: runs/V5_RQ02_T01_nogate_results/
+    description: "18 nogate ablation runs with raw transcripts, claims, and oracle audits."
+  - artifact: runs/V5_RQ02_T02_noaudit_results/
+    description: "18 noaudit ablation runs with raw transcripts, claims, and oracle audits."
+  - artifact: runs/V5_RQ01_T04_full_results/
+    description: "18 Full AgenticLoop runs reused as baseline from RQ01."
+  - artifact: runs/V5_RQ01_T05_metrics.json
+    description: "RQ01 full condition metrics used as baseline for delta computation."
+
+supporting_metrics:
+  - metric: "unsupported_claim_rate_full"
+    value: 0.1250
+  - metric: "unsupported_claim_rate_nogate"
+    value: 0.3103
+  - metric: "unsupported_claim_rate_noaudit"
+    value: 0.2111
+  - metric: "trace_completeness_full"
+    value: 0.8750
+  - metric: "trace_completeness_nogate"
+    value: 0.6897
+  - metric: "trace_completeness_noaudit"
+    value: 0.7556
+  - metric: "delta_unsupported_rate_nogate_vs_full"
+    value: 0.1853
+  - metric: "delta_trace_completeness_nogate_vs_full"
+    value: -0.1853
+  - metric: "delta_unsupported_rate_noaudit_vs_full"
+    value: 0.0861
+  - metric: "delta_trace_completeness_noaudit_vs_full"
+    value: -0.1194
+  - metric: "overgeneralization_runs_noaudit"
+    value: 3
+  - metric: "wall_time_seconds_full"
+    value: 8.47
+  - metric: "wall_time_seconds_nogate"
+    value: 9.28
+  - metric: "wall_time_seconds_noaudit"
+    value: 3.76
+  - metric: "tokens_per_supported_claim_full"
+    value: 332.9
+  - metric: "tokens_per_supported_claim_nogate"
+    value: 478.8
+  - metric: "tokens_per_supported_claim_noaudit"
+    value: 247.0
+
+score: 39/50
+
+detector_scan:
+  label_chaser: false
+  leaderboard_lizard: false
+  architecture_lego: false
+  vague_promiser: false
+  single_point_claim: false
+  toy_rq: false
+
+mve_status: completed
+mve_description: "6-task synthetic suite executed across 3 ablation conditions × 3 seeds; cost-quality deltas and descriptive statistical summaries produced as traceable artifacts."
+
+falsification_condition: "若 nogate 的 unsupported claim rate 未显著高于 full，或 noaudit 的 wall time 未显著低于 full，或人工审计推翻 deterministic audit 标签，则该 RQ 假设被反驳或降级。"
+reproducibility:
+  command: "python experiments/v5/scripts/generate_insight.py --rq RQ02"
+  environment: Python 3.10+
+  seed: null
