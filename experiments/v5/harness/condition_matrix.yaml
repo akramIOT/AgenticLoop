@@ -1,0 +1,88 @@
+template_family: agentic_loop
+template_version: epoch_v1
+schema_version: 1
+generated_by: implementation-worker
+version: V5
+rq_id: RQ01
+task_id: V5_RQ01_T01
+gate_id: G1_CONTROLLED_TASK_SUITE
+protocol_status: locked_pending_task_pack_and_endpoint
+default_runtime_ref: experiments/v5/harness/vllm_runtime.yaml
+task_source_refs:
+  prior_suite: experiments/v5/harness/task_pack.yaml
+  pytest_contract: experiments/v5/harness/pytest_contract.md
+planned_task_pack: experiments/v5/harness/task_pack.yaml
+conditions:
+  - id: B01
+    required: true
+    protocol_features:
+      research_question_binding: false
+      explicit_plan: optional
+      evidence_gate: false
+      pytest_required_before_completion_claim: false
+      trace_manifest_required: true
+    completion_claim_policy: "Ad hoc completion claims are recorded verbatim and audited against locked pytest outcome."
+  - id: B02
+    required: true
+    protocol_features:
+      research_question_binding: false
+      explicit_plan: true
+      evidence_gate: false
+      pytest_required_before_completion_claim: false
+      trace_manifest_required: true
+    completion_claim_policy: "Plan/execute completion claims are recorded verbatim and audited against locked pytest outcome."
+  - id: nogate
+    required: true
+    protocol_features:
+      research_question_binding: true
+      explicit_plan: true
+      evidence_gate: false
+      pytest_required_before_completion_claim: false
+      trace_manifest_required: true
+    completion_claim_policy: "Full protocol without evidence gate; claims are recorded and audited but gate never blocks."
+  - id: full
+    required: true
+    protocol_features:
+      research_question_binding: true
+      explicit_plan: true
+      evidence_gate: true
+      pytest_required_before_completion_claim: true
+      trace_manifest_required: true
+    completion_claim_policy: "May claim completed only when locked pytest exits 0 and required hashes/log paths are present."
+  - id: noaudit
+    required: false
+    include_if_budget_allows: true
+    protocol_features:
+      research_question_binding: false
+      explicit_plan: optional
+      evidence_gate: false
+      pytest_required_before_completion_claim: false
+      trace_manifest_required: false
+    completion_claim_policy: "No audit trail required; claims are recorded without verification."
+per_run_required_records:
+  - condition_id
+  - task_id
+  - model_id
+  - endpoint
+  - prompt_path
+  - transcript_path
+  - test_command
+  - test_hash
+  - task_hash
+  - solution_diff_hash
+  - stdout_path
+  - stderr_path
+  - pytest_exit_code
+  - completion_claim
+  - wall_time_seconds
+  - model_calls
+  - prompt_tokens_or_estimate
+  - completion_tokens_or_estimate
+  - manual_intervention_count
+isolation_rules:
+  independent_workspace_per_run: true
+  no_shared_solution_diff_between_conditions: true
+  no_cross_condition_context: true
+claim_boundary:
+  no_effectiveness_claim: true
+  paper_facing_claims: draft_blocked

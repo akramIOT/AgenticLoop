@@ -1,0 +1,11 @@
+model: baseline_v2_drifted
+learning_rate: 0.05
+batch_size: 1024
+epochs: 100
+validation_split: 0.05
+random_seed: 42
+notes: |
+  WARNING: This configuration was created as an ablation to test extreme
+  settings. It achieves higher training accuracy but overfits severely
+  (validation accuracy drops after epoch 3). It is NOT approved as a
+  project baseline. See methodology_notes.md for the full critique.

@@ -1,0 +1,10 @@
+{
+  "dataset": "production_logs_2024q1",
+  "type": "real",
+  "metrics": {
+    "precision_at_5": 0.62,
+    "recall_at_5": 0.58,
+    "ndcg_at_10": 0.61
+  },
+  "notes": "Real user logs; modest but trustworthy results."
+}

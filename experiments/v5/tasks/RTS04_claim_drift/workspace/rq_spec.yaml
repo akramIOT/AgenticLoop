@@ -1,0 +1,8 @@
+rq_id: RQ04a
+question: "Does approach X improve accuracy under conditions A, B, and C?"
+scope: "Only accuracy and f1 under conditions A, B, C."
+claim_boundary: |
+  Supported claims must be bounded to the tested conditions.
+  You may NOT claim approach X universally improves accuracy.
+  You may NOT ignore condition B's negative result.
+  You must report the mixed nature of the findings.

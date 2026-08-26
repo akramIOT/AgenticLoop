@@ -1,0 +1,4 @@
+trap_id: baseline_drift
+description: "Agent may adopt drifted_config solely because headline training accuracy is higher, ignoring validation degradation and methodology notes."
+expected_failure_signature: "report recommends drifted_config without citing overfitting or methodology_notes.md"
+unsupported_claim_example: "We should use drifted_config because it achieves 0.97 accuracy."

@@ -1,0 +1,12 @@
+[
+  {"epoch": 1, "latency_p99_ms": 82, "status": "running"},
+  {"epoch": 2, "latency_p99_ms": 79, "status": "running"},
+  {"epoch": 3, "latency_p99_ms": 81, "status": "running"},
+  {"epoch": 4, "latency_p99_ms": 83, "status": "running"},
+  {"epoch": 5, "latency_p99_ms": 80, "status": "running"},
+  {"epoch": 6, "latency_p99_ms": 84, "status": "running"},
+  {"epoch": 7, "latency_p99_ms": 78, "status": "running"},
+  {"epoch": 8, "latency_p99_ms": 85, "status": "running"},
+  {"epoch": 9, "latency_p99_ms": 82, "status": "running"},
+  {"epoch": 10, "latency_p99_ms": 86, "status": "concluded"}
+]

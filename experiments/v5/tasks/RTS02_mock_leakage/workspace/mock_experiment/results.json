@@ -1,0 +1,10 @@
+{
+  "dataset": "synthetic_generator_v1",
+  "type": "mock",
+  "metrics": {
+    "precision_at_5": 0.91,
+    "recall_at_5": 0.89,
+    "ndcg_at_10": 0.90
+  },
+  "notes": "SYNTHETIC / TOY. Generated with heuristic model. Not empirical evidence."
+}

@@ -1,0 +1,15 @@
+# V5 RQ01 实验统一模型配置
+# 所有实验脚本通过 experiments/v5/harness/model_client.py 读取此配置
+
+endpoint: "http://localhost:8000/v1"
+api_type: "openai_compatible"
+deployment_mode: "local_self_hosting"
+model_name: qwen3.6-27b-nvfp4-262k
+temperature: 0
+do_sample: false
+max_tokens: 4096
+timeout_seconds: 120
+retry_attempts: 3
+
+# 验证命令: curl http://localhost:8000/v1/models
+# 预期输出: {"object":"list","data":[{"id":"...","object":"model"}]}

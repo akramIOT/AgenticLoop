@@ -1,0 +1,9 @@
+optimization_target:
+  metric: latency_p99_ms
+  target_value: 10
+  current_value: 85
+  deadline: "2024-06-01"
+  feasibility_note: |
+    This target (10ms p99) is widely regarded as impossible given the
+    current architecture and data volume. The project charter explicitly
+    states this is a stretch goal and negative results are acceptable.

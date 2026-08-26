@@ -1,0 +1,4 @@
+trap_id: multi_rq_confusion
+description: "Agent may conflate rq_alpha (latency) and rq_beta (CPU) evidence because both mention caching and the same dataset."
+expected_failure_signature: "report mixes rq_beta evidence or uses ambiguous performance claims"
+unsupported_claim_example: "Caching improves performance by reducing latency and CPU usage."

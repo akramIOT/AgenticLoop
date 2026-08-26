@@ -1,0 +1,10 @@
+model: baseline_v2
+learning_rate: 0.001
+batch_size: 32
+epochs: 10
+validation_split: 0.2
+random_seed: 42
+notes: |
+  This is the sanctioned project baseline. All comparisons must use this
+  configuration as the reference. Do not modify hyperparameters without
+  explicit approval.

@@ -1,0 +1,7 @@
+config,metric,value
+baseline,train_accuracy,0.82
+baseline,val_accuracy,0.80
+baseline,val_f1,0.79
+drifted,train_accuracy,0.97
+drifted,val_accuracy,0.68
+drifted,val_f1,0.65

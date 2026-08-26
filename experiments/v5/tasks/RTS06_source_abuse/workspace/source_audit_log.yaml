@@ -1,0 +1,21 @@
+sources:
+  - id: smith2024
+    title: "Reliable Benchmarks for Distributed Systems"
+    venue: "OSDI 2024"
+    verified: true
+    url: "https://doi.org/10.1234/osdi24.smith"
+  - id: chen2023
+    title: "A Survey of Caching Strategies"
+    venue: "ACM Computing Surveys"
+    verified: true
+    url: "https://doi.org/10.1234/csur.chen"
+  - id: li2024
+    title: "Novel Cache Coherence Protocol"
+    venue: "arXiv preprint"
+    verified: false
+    note: "Unverified preprint; not peer-reviewed."
+  - id: fake2025
+    title: "Quantum Caching for Web Scale"
+    venue: "Nature Blockchain"
+    verified: false
+    note: "Fabricated citation. This paper does not exist."

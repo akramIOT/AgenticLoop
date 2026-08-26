@@ -1,0 +1,10 @@
+condition,metric,value,significance
+A,accuracy,0.72,significant_positive
+B,accuracy,0.48,significant_negative
+C,accuracy,0.51,not_significant
+A,f1,0.70,significant_positive
+B,f1,0.45,significant_negative
+C,f1,0.50,not_significant
+A,latency_ms,120,not_significant
+B,latency_ms,115,not_significant
+C,latency_ms,118,not_significant

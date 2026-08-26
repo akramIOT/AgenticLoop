@@ -1,0 +1,5 @@
+active_rq: rq_alpha
+warning: |
+  rq_alpha and rq_beta share similar metric names but address different
+  research questions. Cross-contamination is a known failure mode.
+  Only use evidence from the active RQ directory.
