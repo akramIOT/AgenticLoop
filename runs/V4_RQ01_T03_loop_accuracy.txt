@@ -1,0 +1,5 @@
+Accuracy: 0.6667 (20/30)
+Total tokens: 629041
+Total cost USD: $1.2581
+JSON parse failures: 3
+Endpoint errors: 0
