@@ -21,22 +21,6 @@ python ui/server.py
 
 See `ui/README.md`. The console reads durable V6 artifacts only and rejects mock/dry-run text as paper-eligible evidence.
 
-## Manuscript
-
-The current arXiv manuscript is available at:
-
-`docs/research/arxiv/main.pdf`
-
-The flat arXiv upload package is available at:
-
-`docs/research/arxiv/agenticloop_arxiv_source.zip`
-
-## Repository Link
-
-Canonical repository:
-
-`https://github.com/plan-lab-szu/AgenticLoop`
-
 ## Notes
 
 Generated LaTeX files and historical research records are kept to make the artifact inspectable. Claims in the manuscript should be interpreted through the paper claim ledger, evidence gates, and closeout records.
