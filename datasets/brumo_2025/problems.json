@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "problem_text": "Find the smallest positive integer $n$ such that $n$ is divisible by exactly 25 different positive integers.",
+    "category": "number_theory",
+    "difficulty": "medium",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 2,
+    "problem_text": "Two squares, $ABCD$ and $AEFG$, have equal side length $x$. They intersect at $A$ and $O$. Given that $CO = 2$ and $OA = 2\\sqrt{2}$, what is $x$?",
+    "category": "geometry",
+    "difficulty": "medium",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 3,
+    "problem_text": "Bruno and Brutus are running on a circular track with a 20 foot radius. Bruno completes 5 laps every hour, while Brutus completes 7 laps every hour. If they start at the same point but run in opposite directions, how far along the track's circumference (in feet) from the starting point are they when they meet for the sixth time? Note: Do not count the moment they start running as a meeting point.",
+    "category": "algebra",
+    "difficulty": "easy",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 4,
+    "problem_text": "What is the smallest positive integer $n$ such that $z^n - 1$ and $(z - \\sqrt{3})^n - 1$ share a common complex root?",
+    "category": "algebra",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 5,
+    "problem_text": "Consider a pond with lily pads numbered from 1 to 12 arranged in a circle. Bruno the frog starts on lily pad 1. Each turn, Bruno has an equal probability of making one of three moves: jumping 4 lily pads clockwise, jumping 2 lily pads clockwise, or jumping 1 lily pad counterclockwise. What is the expected number of turns for Bruno to return to lily pad 1 for the first time?",
+    "category": "probability",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 6,
+    "problem_text": "4 bears — Aruno, Bruno, Cruno and Druno — are each given a card with a positive integer and are told that the sum of their 4 numbers is 17. They cannot show each other their cards, but discuss a series of observations in the following order:\\n\\nAruno: \\u201cI think it is possible that the other three bears all have the same card.\\u201d\\nBruno: \\u201cAt first, I thought it was possible for the other three bears to have the same card. Now I know it is impossible for them to have the same card.\\u201d\\nCruno: \\u201cI think it is still possible that the other three bears have the same card.\\u201d\\nDruno: \\u201cI now know what card everyone has.\\u201d\\n\\nWhat is the product of their four card values?",
+    "category": "logic",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 7,
+    "problem_text": "Digits 1 through 9 are placed on a 3x3 square such that all rows and columns sum to the same value. Please note that diagonals do not need to sum to the same value. How many ways can this be done?",
+    "category": "combinatorics",
+    "difficulty": "medium",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 8,
+    "problem_text": "Define the operation $\\oplus$ by $x \\oplus y = xy - 2x - 2y + 6$. Compute all complex numbers $a$ such that $a \\oplus (a \\oplus (a \\oplus a)) = a$.",
+    "category": "algebra",
+    "difficulty": "medium",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 9,
+    "problem_text": "Define the function $f$ on positive integers: $f(n) = n/2$ if $n$ is even, $f(n) = n + 1$ if $n$ is odd. Let $S(n)$ equal the smallest positive integer $k$ such that $f^k(n) = 1$. How many positive integers satisfy $S(n) = 11$?",
+    "category": "number_theory",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 10,
+    "problem_text": "Let $ABCDEF$ be a convex cyclic hexagon. Suppose that $AB = DE = \\sqrt{5}$, $BC = EF = 3$, and $CD = FA = \\sqrt{20}$. Compute the circumradius of $ABCDEF$.",
+    "category": "geometry",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 11,
+    "problem_text": "A repetend is the infinitely repeated digit sequence of a repeating decimal. What are the last three digits of the repetend of the decimal representation of $\\frac{1}{727}$, given that the repetend has a length of 726? Express the answer as a three-digit number. Include preceding zeros if there are any.",
+    "category": "number_theory",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 12,
+    "problem_text": "Consider a 54-deck of cards, i.e. a standard 52-card deck together with two jokers. Ada draws cards from the deck until Ada has drawn an ace, a king, and a queen. How many cards does Ada pick up on average?",
+    "category": "probability",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 13,
+    "problem_text": "Let $\\omega$ be a circle, and let a line $\\ell$ intersect $\\omega$ at two points, $P$ and $Q$. Circles $\\omega_1$ and $\\omega_2$ are internally tangent to $\\omega$ at points $X$ and $Y$, respectively, and both are tangent to $\\ell$ at a common point $D$. Similarly, circles $\\omega_3$ and $\\omega_4$ are externally tangent to $\\omega$ at $X$ and $Y$, respectively, and are tangent to $\\ell$ at points $E$ and $F$, respectively.\\n\\nGiven that the radius of $\\omega$ is 13, the segment $\\overline{PQ} = 24$, and $\\overline{YD} = \\overline{YE}$, find the length of segment $\\overline{YF}$.",
+    "category": "geometry",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 14,
+    "problem_text": "Let $f$ be a degree 7 polynomial satisfying $f(k) = \\frac{1}{k^2}$ for $k \\in \\{1 \\cdot 2, 2 \\cdot 3, \\ldots, 8 \\cdot 9\\}$. Find $f(90) - \\frac{1}{90^2}$.",
+    "category": "algebra",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  },
+  {
+    "id": 15,
+    "problem_text": "Let $\\triangle ABC$ be an isosceles triangle with $AB = AC$. Let $D$ be a point on the circumcircle of $\\triangle ABC$ on minor arc $AB$. Let $\\overline{AD}$ intersect the extension of $\\overline{BC}$ at $E$. Let $F$ be the midpoint of segment $\\overline{AC}$, and let $G$ be the intersection of $\\overline{EF}$ and $\\overline{AB}$. Let the extension of $\\overline{DG}$ intersect $\\overline{AC}$ and the circumcircle of $\\triangle ABC$ at $H$ and $I$, respectively. Given that $DG = 3$, $GH = 5$, and $HI = 1$, compute the length of $\\overline{AE}$.",
+    "category": "geometry",
+    "difficulty": "hard",
+    "source": "BrUMO 2025 Team Round"
+  }
+]

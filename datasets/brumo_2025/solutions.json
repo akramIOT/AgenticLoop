@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "answer": "1296",
+    "solution_text": "Since 25 = (4+1) x (4+1), n = p^4 x q^4 for distinct prime numbers p and q. To obtain the smallest positive integer n, we choose p = 2 and q = 3, giving n = 2^4 x 3^4 = 1296.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 2,
+    "answer": "1 + sqrt(3)",
+    "solution_text": "DO = CD - CO = x - 2. By Pythagorean theorem on triangle AOD: (x-2)^2 + x^2 = (2*sqrt(2))^2 = 8. This gives 2x^2 - 4x + 4 = 8, so x^2 - 2x - 2 = 0. Using quadratic formula, x = 1 + sqrt(3) (taking positive root).",
+    "answer_type": "expression"
+  },
+  {
+    "id": 3,
+    "answer": "20*pi",
+    "solution_text": "Bruno and Brutus run in opposite directions with combined speed of 12 laps per hour. They meet every 1/12 hour = 5 minutes. For the sixth meeting, 30 minutes have passed. Bruno completes 2.5 laps, Brutus completes 3.5 laps. Both are on the opposite side of the track, so they are halfway along the circumference. Circumference = 40*pi, so distance = 20*pi feet.",
+    "answer_type": "expression"
+  },
+  {
+    "id": 4,
+    "answer": "12",
+    "solution_text": "The roots of z^n - 1 lie on |z| = 1. The roots of (z - sqrt(3))^n - 1 lie on |z - sqrt(3)| = 1. These circles intersect at sqrt(3)/2 + i/2 and sqrt(3)/2 - i/2, which equal e^(pi*i/6) and e^(-pi*i/6). The smallest n for which e^(pi*i/6) is a root of both polynomials is n = 12.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 5,
+    "answer": "12",
+    "solution_text": "Define E_k as expected turns to return to lily pad 1 from pad k. Setting up recurrence relations for E_1 through E_12 and summing all equations yields sum_{k=1}^{12} E_k = sum_{k=2}^{12} E_k + 12, thus E_1 = 12.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 6,
+    "answer": "160",
+    "solution_text": "Let the cards be a, b, c, d summing to 17. From Aruno's statement: 17-a is divisible by 3, so a in {2,5,8,11,14}. From Bruno's statement: a, c, d cannot all be equal, so b in {5,8,14} (not 2 or 11). From Cruno's statement: 3b in {15,24,42}, so b=5 (since 24,42 too large), giving c=2. From Druno's statement with c=2: a+b can be 7,10,13; only a+b=7 works with a=2,b=5, giving d=8. Thus abcd = 2 x 5 x 2 x 8 = 160.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 7,
+    "answer": "72",
+    "solution_text": "Each row/column sums to 15 (since 1+...+9 = 45). The only ways to make 15 with 9 are 9+5+1 and 9+4+2. By rotation/permutation symmetry analysis, the solution structure is determined up to 3! ways to permute columns, 3! ways to permute rows, and 2 for switching axes: 3! x 3! x 2 = 72.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 8,
+    "answer": "2, 3, (3+i*sqrt(3))/2, (3-i*sqrt(3))/2",
+    "solution_text": "Factor: x ⊕ y = (x-2)(y-2) + 2. Let b = a - 2, then a ⊕ a = b^2 + 2. Iterating: a ⊕ (a ⊕ (a ⊕ a)) = b^4 + 2. Setting equal to a = b + 2: b^4 + 2 = b + 2, so b(b-1)(b^2+b+1) = 0. Thus b = 0, 1, (-1+i*sqrt(3))/2, (-1-i*sqrt(3))/2. Therefore a = 2, 3, (3+i*sqrt(3))/2, (3-i*sqrt(3))/2.",
+    "answer_type": "list"
+  },
+  {
+    "id": 9,
+    "answer": "89",
+    "solution_text": "Let a_k = number of even n != 2 with S(n)=k, b_k = number of odd n != 1 with S(n)=k. Recurrence: c_{k+1} = c_k + c_{k-1} for k >= 3 where c_k = a_k + b_k. With c_2 = 1, c_3 = 2, this yields c_11 = 89.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 10,
+    "answer": "(1 + sqrt(31))/2",
+    "solution_text": "By symmetry, AD is a diameter. Let R be circumradius. Using Ptolemy's theorem on quadrilateral ABCD: (4R^2 - c^2)(4R^2 - b^2) = (2aR + b*d)^2 where a=sqrt(5), b=3, c=sqrt(20). Simplifying gives 4R^3 - 34R - 30 = 0. Factoring: (R+1)(4R^2 - 4R - 30) = 0. Positive solution: R = (1 + sqrt(31))/2.",
+    "answer_type": "expression"
+  },
+  {
+    "id": 11,
+    "answer": "337",
+    "solution_text": "Since repetend length is 726, 1/727 = R/(10^726 - 1), so 727R = 10^726 - 1. For last three digits: solve 100a + 10b + c ≡ 999 (mod 1000). Units digit: 7c ≡ 9 (mod 10), so c = 7. Tens: 7*10b + 27*7 ≡ 99 (mod 100), so b = 3. Hundreds: 7*100a + 27*30 + 727*7 ≡ 999 (mod 1000), so a = 3. Last three digits: 337.",
+    "answer_type": "integer"
+  },
+  {
+    "id": 12,
+    "answer": "737/39",
+    "solution_text": "Let X,Y,Z be positions of first ace, king, queen. E[max(X,Y,Z)] = E[X+Y+Z - min(X,Y) - min(Y,Z) - min(X,Z) + min(X,Y,Z)]. By linearity of expectation and treating Aces/Kings as dividers: E[X]=11, E[min(X,Y)]=55/9, E[min(X,Y,Z)]=55/13. Thus E[max] = 3*11 - 3*(55/9) + 55/13 = 737/39.",
+    "answer_type": "fraction"
+  },
+  {
+    "id": 13,
+    "answer": "5*sqrt(2)",
+    "solution_text": "Using homothety and radical axis theorem on the configuration, with R=13 and PQ=24, OH = sqrt(13^2 - 12^2) = 5. By symmetry and similar triangles, DE = HE - HD = HM - HM' = (R+OH) - (R-OH) = 2*OH = 10. Thus YF = YE = 10/sqrt(2) = 5*sqrt(2).",
+    "answer_type": "expression"
+  },
+  {
+    "id": 14,
+    "answer": "-2431/50",
+    "solution_text": "Define g(x) = x^2 f(x) - 1, a degree-9 polynomial with roots at {1*2, 2*3, ..., 8*9}. Write g(x) = c(x+b)(x-1*2)(x-2*3)...(x-8*9). Since x^2 | g(x)+1, coefficient of x in g(x)+1 is 0, giving b = 9/8. Constant term g(0)+1 = 0 gives c = -8/(9! * 9!). Plugging in x = 90 yields f(90) - 1/90^2 = -2431/50.",
+    "answer_type": "fraction"
+  },
+  {
+    "id": 15,
+    "answer": "9*sqrt(30)/4",
+    "solution_text": "Since angle ADB = 180 - angle C = 180 - angle B = angle ABE, triangle ADB ~ triangle ABE, so AB is tangent to circumcircle of BDE. Using symmedian properties and Stewart's formula with DG=3, GH=5, AG=IG=6, AH=DH=8, we get AD = sqrt(216/5). By power of a point: AE = AB^2 / AD = 9*sqrt(30)/4.",
+    "answer_type": "expression"
+  }
+]
