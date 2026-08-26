@@ -4,14 +4,11 @@ AgenticLoop is an evidence-gated control plane for AI-assisted computational res
 
 This repository contains the public research artifact for the AgenticLoop technical report:
 
-- `docs/research/arxiv/`: manuscript source, generated PDF, figures, and arXiv upload packages.
-- `docs/research/paper/`: publication-facing manuscript workspace and claim ledger materials.
 - `experiments/agenticloop/`: experiment workspace skeleton, audit scripts, and protocol-facing runners.
 - `tests/agenticloop/`: regression tests for the experiment and audit contracts.
 - `docs/research/`: research state, version records, evidence notes, and supporting documentation.
 - `src/agenticloop/`: claim admission, metric provenance, and research-spine loaders.
 - `ui/`: Evidence Console — local UI for gate admission, provenance, and protocol comparison.
-- `paper/`: **Manuscript package** — NeurIPS-oriented draft (`paper/main.pdf`) and IEEE IEEEtran version (`paper/ieee/main.pdf`), with shared figures and V6 artifacts.
 
 The public artifact is venue-neutral. It preserves the research process and reproducibility materials without encoding a specific submission venue or outcome.
 
